@@ -1,4 +1,5 @@
-﻿using RegexProblem.UserRegistrationProblem;
+﻿using RegexProblem.Email;
+using RegexProblem.UserRegistrationProblem;
 
 namespace RegexProblem;
 
@@ -8,12 +9,13 @@ public class Program
     {
         Console.WriteLine("REGEX Practice Problem!");
         UserRegistration userRegistration = new UserRegistration();
+        SampleEmails sampleEmails = new SampleEmails();
         Console.WriteLine("WELCOME TO USER REGISTRATION");
         bool flag = true;
         while (flag)
         {
             Console.WriteLine("\nEnter option to choose \n1.First Name \n2.Last Name \n3.Email \n4.Mobile Number \n5.Password Rule 1 " +
-                "\n6.Password Rule 2 \n7.Password Rule 3 \n8.Password Rule 4 \n9.Exit");
+                "\n6.Password Rule 2 \n7.Password Rule 3 \n8.Password Rule 4 \n9.Check Sample Emails \n10.Exit");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -56,6 +58,11 @@ public class Program
                     Console.WriteLine("\nEnter Password");
                     string password4 = Console.ReadLine();
                     userRegistration.validatePassword4(password4);
+                    break;
+                case 9:
+                    Console.WriteLine("\nEnter to check whether email is valid or not");
+                    string str = Console.ReadLine();
+                    sampleEmails.CheckEmail(str);
                     break;
                 default:
                     flag = false;
