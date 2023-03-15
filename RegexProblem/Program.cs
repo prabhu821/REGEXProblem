@@ -12,7 +12,8 @@ public class Program
         bool flag = true;
         while (flag)
         {
-            Console.WriteLine("\nEnter option to choose \n1.First Name \n2.Last Name \n3.Email \n4.Mobile Number \n5.Password \n6.Exit");
+            Console.WriteLine("\nEnter option to choose \n1.First Name \n2.Last Name \n3.Email \n4.Mobile Number \n5.Password Rule 1 " +
+                "\n6.Password Rule 2 \n7.Exit");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -38,8 +39,13 @@ public class Program
                     break;
                 case 5:
                     Console.WriteLine("\nEnter Password");
-                    string password = Console.ReadLine();
-                    userRegistration.validatePassword(password);
+                    string password1 = Console.ReadLine();
+                    userRegistration.validatePassword1(password1);
+                    break;
+                case 6:
+                    Console.WriteLine("\nEnter Password");
+                    string password2 = Console.ReadLine();
+                    userRegistration.validatePassword2(password2);
                     break;
                 default:
                     flag = false;

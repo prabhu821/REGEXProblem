@@ -13,7 +13,9 @@ public class UserRegistration
     public static string LastName = "^[A-Z]{1}[A-Za-z]{2,}$";
     public static string Email = "^abc+.+[a-zA-Z0-9]+@+bl.co+.+[in|com]$";
     public static string MobileNumber = "^[1-9]{2}[: :][0-9]{10}$";
-    public static string Password = "^[a-z]{8,}$";
+    public static string Password1 = "^[a-z]{8,}$";
+    public static string Password2 = "^[A-Z]{1}[a-zA-Z]{7,}$";
+
 
     //UC1-FIRST NAME
     public void validateFirstName(string fName)
@@ -68,15 +70,28 @@ public class UserRegistration
     }
 
     //UC5-PASSWORD RULE 1
-    public void validatePassword(string password)
+    public void validatePassword1(string password)
     {
-        if (Regex.IsMatch(password, Password))
+        if (Regex.IsMatch(password, Password1))
         {
             Console.WriteLine("Password : " + password);
         }
         else
         {
             Console.WriteLine("For password minimum 8 characters required");
+        }
+    }
+
+    //UC6-PASSWORD RULE 2
+    public void validatePassword2(string password)
+    {
+        if (Regex.IsMatch(password, Password2))
+        {
+            Console.WriteLine("Password : " + password);
+        }
+        else
+        {
+            Console.WriteLine("Minimum 8 characters and Should have at least 1 Upper Case");
         }
     }
 }
