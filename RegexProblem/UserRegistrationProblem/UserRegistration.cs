@@ -13,6 +13,7 @@ public class UserRegistration
     public static string LastName = "^[A-Z]{1}[A-Za-z]{2,}$";
     public static string Email = "^abc+.+[a-zA-Z0-9]+@+bl.co+.+[in|com]$";
     public static string MobileNumber = "^[1-9]{2}[: :][0-9]{10}$";
+    public static string Password = "^[a-z]{8,}$";
 
     //UC1-FIRST NAME
     public void validateFirstName(string fName)
@@ -63,6 +64,19 @@ public class UserRegistration
         else
         {
             Console.WriteLine("Please enter a valid 10 digit mobile number with 2 digit country code ex 'xx 9xxxxxxx45'");
+        }
+    }
+
+    //UC5-PASSWORD RULE 1
+    public void validatePassword(string password)
+    {
+        if (Regex.IsMatch(password, Password))
+        {
+            Console.WriteLine("Password : " + password);
+        }
+        else
+        {
+            Console.WriteLine("For password minimum 8 characters required");
         }
     }
 }
