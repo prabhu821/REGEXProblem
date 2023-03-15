@@ -110,4 +110,16 @@ public class UserRegistration
         }
     }
 
+    //UC8-PASSWORD RULE 4
+    public void validatePassword4(string password)
+    {
+        if (Regex.IsMatch(password, Password4))
+        {
+            Console.WriteLine("Password : " + password);
+        }
+        else
+        {
+            Console.WriteLine("Minimum 8 characters and Should have at least 1 Upper Case and 1 Numeric number and has exactly 1 special character");
+        }
+    }
 }

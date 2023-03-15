@@ -13,7 +13,7 @@ public class Program
         while (flag)
         {
             Console.WriteLine("\nEnter option to choose \n1.First Name \n2.Last Name \n3.Email \n4.Mobile Number \n5.Password Rule 1 " +
-                "\n6.Password Rule 2 \n7.Password Rule 3 \n8.Exit");
+                "\n6.Password Rule 2 \n7.Password Rule 3 \n8.Password Rule 4 \n9.Exit");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -52,7 +52,11 @@ public class Program
                     string password3 = Console.ReadLine();
                     userRegistration.validatePassword3(password3);
                     break;
-               
+                case 8:
+                    Console.WriteLine("\nEnter Password");
+                    string password4 = Console.ReadLine();
+                    userRegistration.validatePassword4(password4);
+                    break;
                 default:
                     flag = false;
                     break;
