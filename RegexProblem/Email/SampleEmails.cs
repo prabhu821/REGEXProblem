@@ -22,3 +22,11 @@ public class SampleEmails
         }
     }
 }
+
+
+public class ValidateMultipleEmailAddress
+{
+    public const string EMAIL = "^abc+.+[a-zA-Z0-9]+@+bl.co+.+[in|com]$";
+    public string MultipleEmailAddress(string email) => Regex.IsMatch(email, EMAIL) ? "prabhugoyal821@gmail.com" : "Email is not match";
+}
+
