@@ -9,7 +9,7 @@ namespace RegexProblem.Email;
 
 public class SampleEmails
 {
-    public static string EmailCheck = "^[a-zA-Z0-9+-.]+@[a-zA-Z0-9]+.+([com|net|com.com|com.au])$";
+    public static string EmailCheck = "^[A-Za-z0-9]+([.-+][a-zA-Z0-9]+)?[@][a-zA-Z]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2})?$";
     public void CheckEmail(string email)
     {
         if (Regex.IsMatch(email, EmailCheck))

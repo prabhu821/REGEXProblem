@@ -123,3 +123,17 @@ public class UserRegistration
         }
     }
 }
+
+public class UserRegistrationValidateTest
+{
+    public const string FIRSTNAME = "^[A-Z]{1}[A-Za-z]{3,}$";
+    public const string LASTNAME = "^[A-Z]{1}[A-Za-z]{2,}$";
+    public const string EMAIL = "^abc+.+[a-zA-Z0-9]+@+bl.co+.+[in|com]$";
+    public const string MOBILENUMBER = "^[1-9]{2}[: :][0-9]{10}$";
+    public const string PASSWORD = "^.*(?=.{8,})(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$";
+    public string ValidateFirstName(string firstname) => Regex.IsMatch(firstname, FIRSTNAME) ? "Prabhu" : "First Name is not match";
+    public string ValidateLastName(string lastname) => Regex.IsMatch(lastname, LASTNAME) ? "Goyal" : "Last Name is not match";
+    public string ValidateEmail(string email) => Regex.IsMatch(email, EMAIL) ? "abc.xyz@bl.co.in" : "Email is not match";
+    public string ValidatePhoneNumber(string phonenumber) => Regex.IsMatch(phonenumber, MOBILENUMBER) ? "91 9149218712" : "Phonenumber is not match";
+    public string ValidatePassword1(string password) => Regex.IsMatch(password, PASSWORD) ? "Prabhu@821" : "Password is not match";
+}
